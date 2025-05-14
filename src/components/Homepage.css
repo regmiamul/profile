@@ -1,0 +1,367 @@
+:root {
+    --primary: #3A86FF;
+    --primary-light: #E6F0FF;
+    --secondary: #2B2D42;
+    --accent: #FF7D00;
+    --text: #2B2D42;
+    --text-light: #8D99AE;
+    --background: #F8F9FA;
+    --card-bg: #FFFFFF;
+    --border: #EDF2F4;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  
+  .portfolio-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 100vh;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    background-color: var(--secondary);
+    color: white;
+    padding: 2rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-card {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    overflow: hidden;
+    border: 4px solid var(--primary);
+  }
+  
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .profile-card h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .profile-card .title {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .profile-card .location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-info {
+    text-align: left;
+    margin-top: 1.5rem;
+  }
+  
+  .contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+  
+  .nav-item {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+  }
+  
+  .nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+  
+  .nav-item.active {
+    background: var(--primary);
+    color: white;
+    font-weight: 500;
+  }
+  
+  /* Main Content Styles */
+  .content {
+    padding: 3rem;
+    background-color: var(--card-bg);
+  }
+  
+  .section {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary);
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+  
+  .section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary);
+  }
+  
+  .about-section p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    color: var(--text);
+  }
+  
+  .highlight-box {
+    background-color: var(--primary-light);
+    border-left: 4px solid var(--primary);
+    padding: 1.5rem;
+    border-radius: 0 6px 6px 0;
+    margin-top: 2rem;
+  }
+  
+  .highlight-box h3 {
+    margin-bottom: 0.75rem;
+    color: var(--primary);
+  }
+  
+  /* Timeline Styles */
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--border);
+  }
+  
+  .timeline-item {
+    position: relative;
+    padding-bottom: 2rem;
+  }
+  
+  .timeline-item:last-child {
+    padding-bottom: 0;
+  }
+  
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    border: 2px solid var(--card-bg);
+  }
+  
+  .timeline-header {
+    margin-bottom: 0.75rem;
+  }
+  
+  .timeline-header h3 {
+    font-size: 1.25rem;
+    color: var(--secondary);
+  }
+  
+  .timeline-meta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+  
+  .timeline-content {
+    padding-left: 1rem;
+  }
+  
+  .timeline-content li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    list-style-type: none;
+  }
+  
+  .timeline-content li::before {
+    content: '•';
+    position: absolute;
+    left: -1rem;
+    color: var(--primary);
+  }
+  
+  /* Skills Section */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+  
+  .skill-category h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+  }
+  
+  .skill-category ul {
+    list-style-type: none;
+  }
+  
+  .skill-category li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .skill-category li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+  }
+  
+  .certifications {
+    margin-top: 3rem;
+  }
+  
+  .badges {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  
+  .badge {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  
+  /* Education Section */
+  .education-item {
+    margin-bottom: 2rem;
+  }
+  
+  .education-item h3 {
+    font-size: 1.25rem;
+    color: var(--secondary);
+  }
+  
+  .institution {
+    font-weight: 500;
+    color: var(--text);
+    margin: 0.25rem 0;
+  }
+  
+  .date {
+    color: var(--text-light);
+    font-size: 0.9rem;
+  }
+  
+  .references {
+    margin-top: 3rem;
+  }
+  
+  .contact-button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .contact-button:hover {
+    background-color: #2a75e6;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .portfolio-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+      position: static;
+      height: auto;
+    }
+    
+    .content {
+      padding: 2rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .content {
+      padding: 1.5rem;
+    }
+    
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
